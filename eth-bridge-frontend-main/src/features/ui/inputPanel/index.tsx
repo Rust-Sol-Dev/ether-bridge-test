@@ -27,14 +27,13 @@ export function InputPanel({
           {/* <input type="checkbox" name="" id="" /> */}
         </div>
         <input
-          type="number"
-          step={0.001}
+          type="text"
           placeholder={$plaseHolder}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={(e) => setAmount(e.target.value.replace(/[^0-9.]/g, ""))}
           value={amount}
           disabled={chainType}
         />
-        <div className={classNames("chain_list", show && "active")}>
+        <div className={classNames("chain_list", show && !chainType && "active")}>
           <h3 onClick={() => handleSelect(chainType! ? false : true)}>
             Sepolia
           </h3>

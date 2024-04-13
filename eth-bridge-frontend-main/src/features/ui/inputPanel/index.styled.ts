@@ -48,7 +48,7 @@ const Container = styled.label<InputPanelStyleType>`
     display: flex;
   }
 
-  input[type="number"] {
+  input[type="text"] {
     background-color: transparent;
     outline: none;
     border: none;
